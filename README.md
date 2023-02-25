@@ -2,5 +2,5 @@
 
 jQuery Toaster Plugin - A simple lightweight jquery plugin to show highly customizable notifications to user.
 
-##Latest Updates
+## Latest Updates
 Latest version of jQuery Toaster is now on playground. Check the demo below to see it in action
