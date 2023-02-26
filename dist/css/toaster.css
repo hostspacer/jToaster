@@ -1,0 +1,328 @@
+/**!
+ * Toaster CSS v.0.0.1 
+ * Use: jQuery Toaster Plugin
+ * Author: Shivasis Biswal
+ * Copyright: Host Spacer
+ * https://hostspacer.com
+ * MIT License
+ * Keep credits to use it free
+ * */
+
+@charset 'utf-8';
+
+.toaster {
+    position: fixed;
+	z-index: 99999;
+	overflow: hidden;
+
+	max-width: 25vw;
+	
+    font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif;
+    line-height: 120%;
+	
+    word-break: break-all;
+    user-select: none;
+	
+    color: #fff;
+    border-radius: 4px;
+    box-shadow: 0.2em 0 .5em rgba(0,0,0,.06);
+	
+	transition-property: top, bottom, left, right, transform;
+    transition: .5s;
+    
+}
+
+.toaster:after {
+	content: "";
+	display: table;
+	clear: both;
+	height: 0;
+	font-size: 0;
+}
+
+.toaster-top-left,
+.toaster-top-right,
+.toaster-left-top,
+.toaster-right-top
+ {
+    top: -5em;
+}
+
+.toaster-bottom-left,
+.toaster-bottom-right,
+.toaster-left-bottom,
+.toaster-right-bottom
+ {
+    bottom: -5em;
+}
+
+.toaster-top-right,
+.toaster-bottom-right,
+.toaster-right-top,
+.toaster-right-bottom
+ {
+    right: 1em;
+}
+
+
+.toaster-top-left,
+.toaster-bottom-left, 
+.toaster-left-top,
+.toaster-left-bottom 
+{
+    left: 1em;
+}
+
+.toaster-top-center,
+.toaster-bottom-center,
+.toaster-center-top,
+.toaster-center-bottom {
+    opacity: 0;
+    transition: .5s;
+	transform: translateX(40vw);
+}
+
+.toaster-top-center,
+.toaster-center-top {
+	top: -5em;
+}
+
+.toaster-bottom-center,
+.toaster-center-bottom {
+	bottom: -5em;
+}
+
+.toaster-center {
+    opacity: 0;
+    transition: .5s;
+	transform: translate(40vw);
+}
+
+.toaster-right-top.toast-active,
+.toaster-right-top.toast-closed,
+.toaster-top-right.toast-active,
+.toaster-top-right.toast-closed,
+.toaster-top-left.toast-active,
+.toaster-top-left.toast-closed,
+.toaster-left-top.toast-active,
+.toaster-left-top.toast-closed {
+    top: 1em;
+}
+
+.toaster-right-bottom.toast-active,
+.toaster-right-bottom.toast-closed,
+.toaster-bottom-right.toast-active,
+.toaster-bottom-right.toast-closed,
+.toaster-bottom-left.toast-active,
+.toaster-bottom-left.toast-closed,
+.toaster-left-bottom.toast-active,
+.toaster-left-bottom.toast-closed {
+    bottom: 1em;
+}
+
+.toaster-left-top.toast-closed,
+.toaster-left-bottom.toast-closed,
+.toaster-top-left.toast-closed,
+.toaster-bottom-left.toast-closed,
+.toaster-top-right.toast-closed,
+.toaster-bottom-right.toast-closed,
+.toaster-right-top.toast-closed,
+.toaster-right-bottom.toast-closed {
+    transition: .5s;
+    animation: fadeOut .5s;
+}
+
+.toaster-top-right.toast-closed,
+.toaster-bottom-right.toast-closed,
+.toaster-right-top.toast-closed,
+.toaster-right-bottom.toast-closed {
+    transform: translateX(40vw);
+}
+
+.toaster-top-left.toast-closed,
+.toaster-bottom-left.toast-closed,
+.toaster-left-top.toast-closed,
+.toaster-left-bottom.toast-closed {
+    transform: translateX(-40vw);
+}
+
+.toaster-top-center.toast-active,
+.toaster-center-top.toast-active {
+    opacity: 1;
+	top: 1em;
+}
+
+.toaster-top-center.toast-closed
+.toaster-center-top.toast-closed {
+	transform: translateX(40vw);
+}
+
+.toaster-bottom-center.toast-active,
+.toaster-center-bottom.toast-active {
+    opacity: 1;
+	bottom: 1em;
+}
+
+.toaster-bottom-center.toast-closed
+.toaster-center-bottom.toast-closed {
+	transform: translateX(40vw);
+}
+
+.toaster-center.toast-active {
+    opacity: 1;
+	top: 20em;
+}
+
+.toaster-center.toast-closed {
+	top: -5em;
+	transform: translateX(40vw);
+}
+
+.toast-close-btn, 
+a.toast-close-btn,
+button.toast-close-btn {
+	border: none;
+	background-color: transparent;
+	text-decoration: none;
+	cursor: pointer;
+	text-align: center;
+	font-size: 16px;
+}
+
+.toast-close-btn, 
+a.toast-close-btn, 
+button.toast-close-btn {
+	color: #eaeaea;
+}
+
+.theme-warning .toast-close-btn, 
+.theme-warning a.toast-close-btn,
+.theme-warning button.toast-close-btn {
+	color: #777;
+}
+
+.toast-close-btn:hover, 
+a.toast-close-btn:hover,
+button.toast-close-btn:hover {
+	text-decoration: none;
+	transform: scale(1.2);
+}
+
+.toast-close-btn:hover, 
+a.toast-close-btn:hover,
+button.toast-close-btn:hover {
+	color: #fcfcfc;
+}
+
+.theme-warning .toast-close-btn:hover, 
+.theme-warning a.toast-close-btn:hover,
+.theme-warning button.toast-close-btn:hover {
+	color: #222;
+}
+
+.toast-wrap {
+	position: relative;
+	display: flex;
+	margin: 0 auto;
+	padding: 10px;
+}
+
+.toast-wrap:after {
+	content: "";
+	display: table;
+	clear: both;
+	height: 0;
+	font-size: 0;
+}
+
+.toast-box {
+	padding: 0 5px;
+	font-size: 16px;
+}
+
+.toast-title { 
+	font-weight: 600;
+}
+
+.toast-content {
+	font-weight: normal;
+}
+
+@media(max-width: 768px){
+	
+	.toaster {
+        max-width: 100%;
+    }
+	
+	.toaster-top-left.toast-closed,
+    .toaster-top-right.toast-closed,
+	.toaster-left-top.toast-closed,
+    .toaster-right-top.toast-closed
+     {
+        transition: .5s;
+        transform: translateX(0);
+        transform: translateY(-50vh);
+    }
+	
+	.toaster-bottom-left.toast-closed,
+    .toaster-bottom-right.toast-closed,
+    .toaster-left-bottom.toast-closed,
+    .toaster-right-bottom.toast-closed {
+        transition: .5s;
+        transform: translateX(0);
+        transform: translateY(50vh);
+    }
+	
+	.toaster-top-left.toast-active,
+	.toaster-top-right.toast-active,
+	.toaster-left-top.toast-active,
+	.toaster-right-top.toast-active {
+        top: 0;
+    }
+	
+	.toaster-bottom-left.toast-active,
+    .toaster-bottom-right.toast-active,
+    .toaster-left-bottom.toast-active,
+    .toaster-right-bottom.toast-active {
+        bottom: 0;
+    }
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1; }
+	20% { opacity: 1; }
+	40% { opacity: 1; }
+	80% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.toast-icon {
+      font-style: normal;
+      font-weight: normal;
+      speak: never;
+      vertical-align: top;
+      display: inline-block;
+	  overflow: hidden;
+      text-decoration: inherit;
+      width: 20px;
+	  height: 20px;
+      text-align: center;
+      /* opacity: .8; */
+     
+      /* For safety - reset parent styles, that can break glyph codes*/
+      font-variant: normal;
+      text-transform: none;
+     
+      /* fix buttons height, for twitter bootstrap */
+      line-height: 120%;
+     
+      /* You can be more comfortable with increased icons size */
+      font-size: 120%;
+     
+      /* Font smoothing. That was taken from TWBS */
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+     
+      /* Uncomment for 3D effect */
+      /* text-shadow: 1px 1px 1px rgba(127, 127, 127, 0.3); */
+}
